@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     // User continues as guest
     public void guestWindow(View view){
-        startActivity(new Intent(getApplicationContext(), SearchActivity.class));
+
+        startActivity(new Intent(getApplicationContext(), MapActivity.class)); // SearchActivity.class
     }
 
 }
