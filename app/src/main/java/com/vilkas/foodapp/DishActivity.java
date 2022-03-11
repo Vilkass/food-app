@@ -78,7 +78,6 @@ public class DishActivity extends AppCompatActivity {
             basicLayout.applyTo(layout);
             showMore.setText("Show more");
         }
-
         descExpand = !descExpand;
     }
 
@@ -92,7 +91,6 @@ public class DishActivity extends AppCompatActivity {
             basicLayout.applyTo(layout);
             ingredientsBtn.setBackgroundResource(R.drawable.ic_sharp_expand_more_24);
         }
-
         ingredientsExpand = !ingredientsExpand;
     }
 

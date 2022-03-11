@@ -31,12 +31,12 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintDimensionRatio="16:9"
+        android:layout_height="300dp"
+        app:layout_constraintDimensionRatio="w,16:9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/cepakai" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"
