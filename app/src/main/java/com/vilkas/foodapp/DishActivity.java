@@ -14,10 +14,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.vilkas.foodapp.adapters.CommentListAdapter;
+import com.vilkas.foodapp.adapters.IngredientsListAdapter;
+import com.vilkas.foodapp.adapters.RestaurantsListAdapter;
 
 public class DishActivity extends AppCompatActivity {
 
     private ListView commentsList;
+    private ListView ingredientsList;
+    private ListView restaurantsList;
 
     // Animation
     private boolean descExpand = false, ingredientsExpand = false, restaurantsExpand = false;
@@ -36,6 +40,8 @@ public class DishActivity extends AppCompatActivity {
     String[] names = {"Tom Sailer", "Tom Thompson", "Alex Holiday"};
     String[] dates = {"2021-11-15", "2021-11-15", "2021-10-15"};
     String[] comments = {"This is my favourite dish! I love it and recommend you.", "Great Lithuanian dish! This dish is very soft and tasty!", ""};
+    String[] ingredients = {"Potato", "Sour Cream", "Tomato", "Cucumber"};
+    String[] restaurants = {"PepCo", "Locaso"};
 
 
     @Override
@@ -48,12 +54,24 @@ public class DishActivity extends AppCompatActivity {
         commentsList = (ListView)findViewById(R.id.commentsList);
         commentsList.setAdapter(adapter);
 
+
+        System.out.println("LOL " + commentsList.getAdapter().getCount());
+
+        RestaurantsListAdapter adapter1 = new RestaurantsListAdapter(this, ingredients);
+        restaurantsList = (ListView)findViewById(R.id.restaurantsList);
+        restaurantsList.setAdapter(adapter1);
+
+        IngredientsListAdapter adapter2 = new IngredientsListAdapter(this, restaurants);
+        ingredientsList = (ListView)findViewById(R.id.ingredientsList);
+        ingredientsList.setAdapter(adapter2);
+
+
+
         layout = (ConstraintLayout)findViewById(R.id.dishLayout);
         showMore = (TextView)findViewById(R.id.showMore);
         ingredientsBtn = (Button)findViewById(R.id.ingredientsBtn);
         restaurantsBtn = (Button)findViewById(R.id.restaurantsBtn);
         animate();
-
 
     }
 

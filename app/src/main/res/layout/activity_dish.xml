@@ -301,16 +301,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
+            android:divider="#00000000"
             app:layout_constraintBottom_toTopOf="@+id/ingridients4"
             app:layout_constraintEnd_toStartOf="@+id/guideline11"
             app:layout_constraintStart_toStartOf="@+id/guideline10"
             app:layout_constraintTop_toBottomOf="@+id/ingridients4" />
 
         <ListView
-            android:id="@+id/restaurantList"
+            android:id="@+id/restaurantsList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone"
+            android:divider="#00000000"
             app:layout_constraintBottom_toBottomOf="@+id/ingridients5"
             app:layout_constraintEnd_toStartOf="@+id/guideline11"
             app:layout_constraintStart_toStartOf="@+id/guideline10"

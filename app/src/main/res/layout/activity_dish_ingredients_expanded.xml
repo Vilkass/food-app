@@ -87,6 +87,7 @@
         android:id="@+id/dishDesc"
         android:layout_width="0dp"
         android:layout_height="100dp"
+        android:layout_marginTop="24dp"
         android:text="Richard McClintock, a Latin scholar from Hampden-Sydney College, is credited with discovering the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his interest was piqued by consectetur—a genuine, albeit rare, Latin word. Consulting a Latin dictionary led McClintock to a passage from De Finibus Bonorum et Malorum (“On the Extremes of Good and Evil”), a first-century B.C. text from the Roman philosopher Cicero."
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
@@ -122,7 +123,7 @@
     <View
         android:id="@+id/ingridients4"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
 
         android:layout_marginTop="-10dp"
         android:background="@color/sub_section"
@@ -152,7 +153,6 @@
         android:background="@color/sub_section"
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toBottomOf="@+id/ingridients3" />
 
@@ -286,16 +286,18 @@
 
     <ListView
         android:id="@+id/ingredientsList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/ingridients4"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="30dp"
+
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/ingridients4"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/ingridients4" />
+        app:layout_constraintTop_toTopOf="@+id/ingridients" />
 
     <ListView
-        android:id="@+id/restaurantList"
+        android:id="@+id/restaurantsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
@@ -307,7 +309,7 @@
     <ListView
         android:id="@+id/commentsList"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
