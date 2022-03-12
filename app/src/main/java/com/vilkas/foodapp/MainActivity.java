@@ -3,12 +3,15 @@ package com.vilkas.foodapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
     // User continues as guest
     public void guestWindow(View view){
-        startActivity(new Intent(getApplicationContext(), MapActivity.class)); // SearchActivity.class
+        preferences = getSharedPreferences("guest", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("guest_mode", true);
+        startActivity(new Intent(getApplicationContext(), MapsActivity.class)); // SearchActivity.class
     }
 
 }

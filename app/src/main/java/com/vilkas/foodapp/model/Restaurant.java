@@ -1,5 +1,7 @@
 package com.vilkas.foodapp.model;
 
+import java.util.List;
+
 public class Restaurant {
 
     private String name;
@@ -7,13 +9,15 @@ public class Restaurant {
     private String city;
     private String address;
     private float rating;
+    private List<Dish> dishes;
 
 
-    public Restaurant(String name, String country, String city, String address) {
+    public Restaurant(String name, String country, String city, String address, List<Dish> dishes) {
         this.name = name;
         this.country = country;
         this.city = city;
         this.address = address;
+        this.dishes = dishes;
     }
 
     public Restaurant(String name, String country, String city, String address, float rating) {
@@ -55,6 +59,13 @@ public class Restaurant {
         return address;
     }
 
+    public List<Dish> getDishes() {
+        return dishes;
+    }
+
+    public void setDishes(List<Dish> dishes) {
+        this.dishes = dishes;
+    }
     public void setAddress(String address) {
         this.address = address;
     }

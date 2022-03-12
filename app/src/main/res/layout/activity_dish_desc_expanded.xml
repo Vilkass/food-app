@@ -15,7 +15,7 @@
         android:background="@color/button_color"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/reviewBtn" />
 
     <View
         android:id="@+id/divider4"
@@ -250,7 +250,7 @@
         tools:layout_editor_absoluteY="329dp" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/reviewText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -263,14 +263,14 @@
         app:layout_constraintTop_toBottomOf="@+id/barrier5" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/reviewBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Review"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/reviewText" />
 
     <TextView
         android:id="@+id/textView13"

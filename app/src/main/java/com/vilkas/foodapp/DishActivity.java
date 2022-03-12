@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.TransitionManager;
@@ -22,8 +23,13 @@ public class DishActivity extends AppCompatActivity {
     private ListView commentsList;
     private ListView ingredientsList;
     private ListView restaurantsList;
+    private TextView reviewText;
+    private Button reviewBtn;
+
+    private SharedPreferences preferences;
 
     // Animation
+    /*
     private boolean descExpand = false, ingredientsExpand = false, restaurantsExpand = false;
     private ConstraintSet basicLayout = new ConstraintSet();
     private ConstraintSet fullDesc = new ConstraintSet();
@@ -34,7 +40,7 @@ public class DishActivity extends AppCompatActivity {
     private TextView showMore;
     private Button ingredientsBtn;
     private Button restaurantsBtn;
-
+*/
 
     // Test data
     String[] names = {"Tom Sailer", "Tom Thompson", "Alex Holiday"};
@@ -66,16 +72,28 @@ public class DishActivity extends AppCompatActivity {
         ingredientsList.setAdapter(adapter2);
 
 
-
+        /*
         layout = (ConstraintLayout)findViewById(R.id.dishLayout);
         showMore = (TextView)findViewById(R.id.showMore);
         ingredientsBtn = (Button)findViewById(R.id.ingredientsBtn);
         restaurantsBtn = (Button)findViewById(R.id.restaurantsBtn);
-        animate();
+        */
+
+        reviewText = (TextView)findViewById(R.id.reviewText);
+        reviewBtn = (Button)findViewById(R.id.reviewBtn);
+
+        preferences = getSharedPreferences("guest", MODE_PRIVATE);
+        if(preferences.getBoolean("guest_mode", true)){
+            reviewText.setVisibility(View.GONE);
+            reviewBtn.setVisibility(View.GONE);
+        }
+
+
+        //animate();
 
     }
 
-
+/*
     private void animate(){
 
         basicLayout.clone(layout);
@@ -125,7 +143,7 @@ public class DishActivity extends AppCompatActivity {
 
         restaurantsExpand = !restaurantsExpand;
     }
-
+*/
 
 
 }

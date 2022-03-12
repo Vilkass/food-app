@@ -79,7 +79,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void mapWindow(View view){
-        startActivity(new Intent(getApplicationContext(), MapActivity.class));
+        startActivity(new Intent(getApplicationContext(), MapsActivity.class));
     }
 
 

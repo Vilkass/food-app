@@ -24,6 +24,7 @@ public class RestaurantsListAdapter extends ArrayAdapter<String> {
 
         super(context, R.layout.restaurant_list, names);
         this.context = context;
+        this.restaurants = names;
 
     }
 

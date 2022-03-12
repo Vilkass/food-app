@@ -7,15 +7,42 @@ public class Review {
     private short value;
     private String comment;
     private LocalDate date;
+    private RegisteredUser user;
+
+    private String data;
 
 
-    public Review(short value, String comment, LocalDate date) {
+    public Review(short value, String comment, String data, RegisteredUser user) {
+        this.value = value;
+        this.comment = comment;
+        this.user = user;
+        this.data = data;
+    }
+
+    public Review(short value, String comment, LocalDate date, RegisteredUser user) {
         this.value = value;
         this.comment = comment;
         this.date = date;
+        this.user  = user;
     }
 
     public Review() {
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public RegisteredUser getUser() {
+        return user;
+    }
+
+    public void setUser(RegisteredUser user) {
+        this.user = user;
     }
 
     public short getValue() {
