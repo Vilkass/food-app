@@ -18,7 +18,7 @@ public class IngredientsListAdapter extends ArrayAdapter<String> {
     //private List<Ingredient> list;
 
     private String[] ingredients = {"Potato", "Sour Cream", "Pot", "Sour"};
-    private boolean[] alergens = {false, false, true, false};
+    private boolean[] alergens = {true, false, true, false};
 
     public IngredientsListAdapter(DishActivity context, String[] names){
         super(context, R.layout.ingredient_list, names);

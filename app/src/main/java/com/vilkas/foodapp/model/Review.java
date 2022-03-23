@@ -8,7 +8,6 @@ public class Review {
     private String comment;
     private LocalDate date;
     private RegisteredUser user;
-
     private String data;
 
 

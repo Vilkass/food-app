@@ -3,6 +3,7 @@ package com.vilkas.foodapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class FilterActivity extends AppCompatActivity {
 
@@ -13,5 +14,10 @@ public class FilterActivity extends AppCompatActivity {
 
     }
 
+
+
+    public void applyFilter(View view){
+        finish();
+    }
 
 }

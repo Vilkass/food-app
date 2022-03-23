@@ -15,6 +15,7 @@
         android:text="Log in with Google"
         android:textAllCaps="false"
         android:textColor="@color/textColor"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/orText2" />
@@ -26,6 +27,7 @@
         android:layout_marginTop="16dp"
         android:text="Or"
         android:textColor="@color/button_color"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
@@ -36,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/round_button"
+        android:onClick="login"
         android:text="Login"
         android:textAllCaps="false"
         android:textColor="@color/textColor"
@@ -65,6 +68,10 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingLeft="14dp"
+        android:paddingTop="4dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="4dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -78,6 +85,10 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:paddingLeft="14dp"
+        android:paddingTop="4dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="4dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/loginEmail" />
@@ -104,6 +115,7 @@
         android:text="Forgot password?"
         android:textColor="@color/button_color"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/loginPass" />

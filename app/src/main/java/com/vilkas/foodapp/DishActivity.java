@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class DishActivity extends AppCompatActivity {
     private ListView restaurantsList;
     private TextView reviewText;
     private Button reviewBtn;
+    private TextView dishName;
 
     private SharedPreferences preferences;
 
@@ -46,7 +48,7 @@ public class DishActivity extends AppCompatActivity {
     String[] names = {"Tom Sailer", "Tom Thompson", "Alex Holiday"};
     String[] dates = {"2021-11-15", "2021-11-15", "2021-10-15"};
     String[] comments = {"This is my favourite dish! I love it and recommend you.", "Great Lithuanian dish! This dish is very soft and tasty!", ""};
-    String[] ingredients = {"Potato", "Sour Cream", "Tomato", "Cucumber"};
+    String[] ingredients = {"Potato", "Sour Cream", "Pot", "Sour"};
     String[] restaurants = {"PepCo", "Locaso"};
 
 
@@ -61,17 +63,15 @@ public class DishActivity extends AppCompatActivity {
         commentsList.setAdapter(adapter);
 
 
-        System.out.println("LOL " + commentsList.getAdapter().getCount());
-
-        RestaurantsListAdapter adapter1 = new RestaurantsListAdapter(this, ingredients);
+        RestaurantsListAdapter adapter1 = new RestaurantsListAdapter(this, restaurants);
         restaurantsList = (ListView)findViewById(R.id.restaurantsList);
         restaurantsList.setAdapter(adapter1);
 
-        IngredientsListAdapter adapter2 = new IngredientsListAdapter(this, restaurants);
+        IngredientsListAdapter adapter2 = new IngredientsListAdapter(this, ingredients);
         ingredientsList = (ListView)findViewById(R.id.ingredientsList);
         ingredientsList.setAdapter(adapter2);
 
-
+        dishName = (TextView)findViewById(R.id.dishName);
         /*
         layout = (ConstraintLayout)findViewById(R.id.dishLayout);
         showMore = (TextView)findViewById(R.id.showMore);
@@ -82,6 +82,7 @@ public class DishActivity extends AppCompatActivity {
         reviewText = (TextView)findViewById(R.id.reviewText);
         reviewBtn = (Button)findViewById(R.id.reviewBtn);
 
+
         preferences = getSharedPreferences("guest", MODE_PRIVATE);
         if(preferences.getBoolean("guest_mode", true)){
             reviewText.setVisibility(View.GONE);
@@ -90,6 +91,16 @@ public class DishActivity extends AppCompatActivity {
 
 
         //animate();
+        initValues();
+    }
+
+
+    private void initValues(){
+
+        Intent intent = getIntent();
+        String dish_name = intent.getStringExtra("dishName");
+        dishName.setText(dish_name);
+
 
     }
 

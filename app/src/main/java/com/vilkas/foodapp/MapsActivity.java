@@ -14,6 +14,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.vilkas.foodapp.utils.StaticData;
+
+import java.util.HashMap;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -29,7 +32,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    public void dish(View view){
+    public void filter(View view){
         startActivity(new Intent(getApplicationContext(), FilterActivity.class));
     }
 
@@ -44,13 +47,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        LatLng mark = null;
+        HashMap<String, String> location = StaticData.getLocation();
+        for(String food : StaticData.getFoods()){
+            String[] cord = location.get(food).split(" ");
+            mark = new LatLng(Double.valueOf(cord[0]), Double.valueOf(cord[1]));
+            googleMap.addMarker(new MarkerOptions().position(mark).title(food));
+        }
 
-        LatLng food = new LatLng(54.68916, 25.2798);
-        googleMap.addMarker(new MarkerOptions().position(food).title("Cepelinai"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(food));
-
-
-
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(mark));
 
         googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
@@ -59,8 +64,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 // which is clicked and displaying it in a toast message.
 //                String markerName = marker.getTitle();
 //                Toast.makeText(MapsActivity.this, "Clicked dish is " + markerName, Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), DishActivity.class));
 
+                Intent intent = new Intent(getApplicationContext(), DishActivity.class);
+                intent.putExtra("dishName", marker.getTitle());
+
+
+                startActivity(intent);
 
                 return false;
             }
